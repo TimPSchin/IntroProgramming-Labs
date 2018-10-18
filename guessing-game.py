@@ -10,12 +10,18 @@ def gameLoop():
     while x < 10:
         guess = input("\nGuess what animal it is?").lower().strip()
         x += 1
-        if guess == "quit":
+        if guess[0] == "q":
             break 
         elif guess == answer:
-              return "\nCongratulations, you guessed correctly!"
+            print("\nCongratulations, you guessed correctly!")
+            yORn = input("Do you like that animal? y or n")
+            if yORn == "y":
+                print("Awesome")
+            else:
+                print("Damn, you suck")
+            return
         else:
               print("I am sorry, thats not it, try again")
-    print("\nDamn you suck")
+    print("\nDamn, you suck")
 
 main()
